@@ -14,20 +14,27 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Set up JDK 17
-        uses: actions/setup-java@v3
+        uses: actions/setup-java@v4
         with:
           java-version: '17'
           distribution: 'temurin'
           cache: maven
 
+      - name: Extract version from branch or tag
+        id: version
+        run: echo "VERSION=$(echo ${GITHUB_REF#refs/heads/} | sed -E 's/^(dev|release)-([0-9]+\.[0-9]+\.[0-9]+)$/\1-\2/')" >> $GITHUB_ENV
+
+      - name: Update POM version
+        run: mvn versions:set -DnewVersion=$VERSION
+
       - name: Build with Maven (excluding specific modules)
         run: mvn clean install
 
       - name: Save build artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: build-artifact
           path: '**/target/*.jar'
@@ -37,7 +44,7 @@ jobs:
     needs: build
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Run Tests
         run: mvn test
@@ -47,13 +54,13 @@ jobs:
     needs: build
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Set up JDK 17
-        uses: actions/setup-java@v3
+        uses: actions/setup-java@v4
         with:
           java-version: '17'
-          distribution: 'adopt'
+          distribution: 'temurin'
           cache: maven
 
       - name: Run Checkstyle
@@ -71,7 +78,7 @@ jobs:
       - uses: actions/setup-java@v4
         with:
           java-version: '17'
-          distribution: 'adopt'
+          distribution: 'temurin'
       - name: Publish package
         run: mvn --batch-mode deploy
         env:
