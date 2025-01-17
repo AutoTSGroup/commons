@@ -56,7 +56,7 @@
         <repository>
             <id>github</id>
             <name>GitHub Packages</name>
-            <url>https://maven.pkg.github.com/AutoTSGroup/commons></url>
+            <url>https://maven.pkg.github.com/AutoTSGroup/commons</url>
         </repository>
     </distributionManagement>
 
