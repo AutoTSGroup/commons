@@ -7,9 +7,9 @@ import lombok.Data;
 @Data
 public class UserCreatedEvent {
 
-  private final Long userId;
-  private final String username;
-  private final String firstName;
-  private final String lastName;
-  private final String phoneNumber;
+    private final Long userId;
+    private final String username;
+    private final String firstName;
+    private final String lastName;
+    private final String phoneNumber;
 }

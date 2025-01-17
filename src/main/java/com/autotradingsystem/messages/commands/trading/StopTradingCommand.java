@@ -1,14 +1,15 @@
 package com.autotradingsystem.messages.commands.trading;
 
-import java.util.UUID;
 import lombok.Builder;
 import lombok.Data;
-import org.axonframework.modelling.command.AggregateIdentifier;
+import org.axonframework.modelling.command.TargetAggregateIdentifier;
+
+import java.util.UUID;
 
 @Builder
 @Data
 public class StopTradingCommand {
 
-  @AggregateIdentifier
-  private final UUID tradingId;
+    @TargetAggregateIdentifier
+    private final UUID tradingId;
 }

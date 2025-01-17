@@ -1,12 +1,13 @@
 package com.autotradingsystem.messages.events.broker;
 
-import java.util.UUID;
 import lombok.Builder;
 import lombok.Data;
+
+import java.util.UUID;
 
 @Builder
 @Data
 public class DeletedBrokerEvent {
 
-  private final UUID brokerId;
+    private final UUID brokerId;
 }

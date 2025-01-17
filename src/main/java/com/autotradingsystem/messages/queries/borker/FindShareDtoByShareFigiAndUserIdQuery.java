@@ -7,7 +7,7 @@ import lombok.Data;
 @Builder
 public class FindShareDtoByShareFigiAndUserIdQuery {
 
-  private String shareFigi;
-  private Long userId;
+    private String shareFigi;
+    private Long userId;
 
 }

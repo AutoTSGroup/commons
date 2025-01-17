@@ -7,8 +7,8 @@ import lombok.Data;
 @Data
 public class FindShareDtoByShareFigiAndUserIdAndBrokerNameQuery {
 
-  private String shareFigi;
-  private Long userId;
-  private String brokerName;
+    private String shareFigi;
+    private Long userId;
+    private String brokerName;
 
 }

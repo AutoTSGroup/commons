@@ -9,10 +9,10 @@ import org.axonframework.modelling.command.TargetAggregateIdentifier;
 @Data
 public class CreateUserCommand {
 
-  @TargetAggregateIdentifier
-  private Long userId;
-  private String username;
-  private String firstName;
-  private String lastName;
-  private String phoneNumber;
+    @TargetAggregateIdentifier
+    private Long userId;
+    private String username;
+    private String firstName;
+    private String lastName;
+    private String phoneNumber;
 }

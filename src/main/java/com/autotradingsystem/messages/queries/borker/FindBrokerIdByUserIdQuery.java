@@ -7,5 +7,5 @@ import lombok.Data;
 @Data
 public class FindBrokerIdByUserIdQuery {
 
-  private Long userId;
+    private Long userId;
 }
