@@ -1,16 +1,20 @@
 package com.autotradingsystem.messages.events.broker;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.UUID;
 
 @Builder
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class UpdatedBrokerEvent {
 
-    private final UUID brokerId;
-    private final String brokerName;
-    private final Long userId;
-    private final boolean valid;
+    private UUID brokerId;
+    private String brokerName;
+    private Long userId;
+    private boolean valid;
 }

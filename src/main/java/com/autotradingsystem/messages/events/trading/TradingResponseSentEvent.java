@@ -1,17 +1,17 @@
 package com.autotradingsystem.messages.events.trading;
 
 
-import lombok.AccessLevel;
-import lombok.Builder;
-import lombok.Data;
+import lombok.*;
 import lombok.experimental.FieldDefaults;
 
 import java.math.BigDecimal;
 import java.time.OffsetDateTime;
+import java.util.UUID;
 
-@FieldDefaults(makeFinal = true, level = AccessLevel.PRIVATE)
 @Builder
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class TradingResponseSentEvent {
 
     private String ticker;
@@ -22,5 +22,5 @@ public class TradingResponseSentEvent {
     private BigDecimal stopLoss;
     private BigDecimal takeProfit;
     private Long userId;
-
+    private UUID brokerId;
 }

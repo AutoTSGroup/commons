@@ -1,8 +1,6 @@
 package com.autotradingsystem.messages.commands.broker;
 
-import lombok.Builder;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
+import lombok.*;
 import org.axonframework.modelling.command.TargetAggregateIdentifier;
 
 import java.util.UUID;
@@ -10,6 +8,8 @@ import java.util.UUID;
 @Builder
 @Data
 @EqualsAndHashCode
+@AllArgsConstructor
+@NoArgsConstructor
 public class DeleteBrokerCommand {
 
     @TargetAggregateIdentifier

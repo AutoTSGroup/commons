@@ -1,24 +1,23 @@
 package com.autotradingsystem.messages.events.trading;
 
-import lombok.AccessLevel;
-import lombok.Builder;
-import lombok.Data;
+import lombok.*;
 import lombok.experimental.FieldDefaults;
 
 import java.math.BigDecimal;
 import java.util.UUID;
 
-@FieldDefaults(makeFinal = true, level = AccessLevel.PRIVATE)
 @Builder
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class TradingStartedEvent {
 
-    private final UUID tradingId;
-    private final UUID brokerId;
-    private final Long userId;
-    private final String figi;
-    private final String name;
-    private final BigDecimal amount;
-    private final String tradingStrategy;
+    private UUID tradingId;
+    private UUID brokerId;
+    private Long userId;
+    private String figi;
+    private String name;
+    private BigDecimal amount;
+    private String tradingStrategy;
 
 }

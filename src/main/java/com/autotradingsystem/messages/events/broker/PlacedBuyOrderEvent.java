@@ -1,22 +1,26 @@
 package com.autotradingsystem.messages.events.broker;
 
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
 import java.util.UUID;
 
 @Builder
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class PlacedBuyOrderEvent {
 
-    private final UUID brokerId;
-    private final Long userId;
-    private final String figi;
-    private final BigDecimal expectedAmount;
-    private final Long timestamp;
-    private final String name;
-    private final String tradingStrategy;
+    private UUID brokerId;
+    private Long userId;
+    private String figi;
+    private BigDecimal expectedAmount;
+    private Long timestamp;
+    private String name;
+    private String tradingStrategy;
 
 }

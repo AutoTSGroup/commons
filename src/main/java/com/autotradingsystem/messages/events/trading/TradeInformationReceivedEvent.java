@@ -1,18 +1,22 @@
 package com.autotradingsystem.messages.events.trading;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.UUID;
 
 @Builder
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class TradeInformationReceivedEvent {
 
-    private final UUID uuid;
-    private final String stockTradeType;
-    private final String strategyType;
-    private final String ticker;
-    private final Integer quantity;
+    private UUID uuid;
+    private String stockTradeType;
+    private String strategyType;
+    private String ticker;
+    private Integer quantity;
 
 }
