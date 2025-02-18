@@ -9,8 +9,6 @@ import java.util.UUID;
 
 @Builder
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
 public class DisAttachedBrokerToUserEvent {
 
     private Long userId;

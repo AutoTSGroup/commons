@@ -23,4 +23,5 @@ public class TradingResponseSentEvent {
     private BigDecimal takeProfit;
     private Long userId;
     private UUID brokerId;
+    private String tradingId;
 }

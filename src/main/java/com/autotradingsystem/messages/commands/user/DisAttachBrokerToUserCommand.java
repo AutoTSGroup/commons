@@ -10,8 +10,6 @@ import java.util.UUID;
 
 @Builder
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
 public class DisAttachBrokerToUserCommand {
 
     @TargetAggregateIdentifier
